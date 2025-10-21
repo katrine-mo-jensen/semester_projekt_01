@@ -24,8 +24,7 @@ class Game {
     // Vi mangler at tage stilling til dette:
     Console.WriteLine("Velkommen til --indsæt spilnavn her--, hvad hedder du?");
     Player player = context.GetPlayer();
-    string spillernavn = player.GetName();
-    Console.WriteLine("Hej " + spillernavn);
+    Console.WriteLine("Hej " + player.GetName());
     
     InitRegistry();
     context.GetCurrent().Welcome();
