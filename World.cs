@@ -5,18 +5,15 @@ class World {
   Space entry;
   
   public World () {
-    Space entry    = new Space("Entry");
-    Space corridor = new Space("Corridor");
-    Space cave     = new Space("Cave");
-    Space pit      = new Space("Darkest Pit");
-    Space outside  = new Space("Outside");
+    Space entry    = new Space("Landbrugsskolen");
+    Space mose = new Space("Mosen");
+    Space mark     = new Space("Marken");
+    Space vandløb      = new Space("Vandløbet");
     
-    entry.AddEdge("door", corridor);
-    corridor.AddEdge("door", cave);
-    cave.AddEdge("north", pit);
-    cave.AddEdge("south", outside);
-    pit.AddEdge("door", cave);
-    outside.AddEdge("door", cave);
+    entry.AddEdge("north", mose);
+    entry.AddEdge("south", mark);
+    entry.AddEdge("east", vandløb);
+    
     
     this.entry = entry;
   }
