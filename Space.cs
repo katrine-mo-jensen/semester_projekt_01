@@ -2,17 +2,27 @@
  */
 
 class Space : Node {
-  public Space (String name) : base(name)
-  {
-  }
+  private string welcomeMessage;
+  public Space(string name, string message = "") : base(name)
+{
+    welcomeMessage = message;
+}
+
   
   public void Welcome () {
-    Console.WriteLine("You are now at "+name);
-    HashSet<string> exits = edges.Keys.ToHashSet();
-    Console.WriteLine("Current exits are:");
-    foreach (String exit in exits) {
-      Console.WriteLine(" - "+exit);
-    }
+     if (!string.IsNullOrEmpty(welcomeMessage)){
+            Console.WriteLine(welcomeMessage);   // <--- dette viser din specielle besked
+            
+        }
+        else
+        {
+            Console.WriteLine("You are now at "+name);
+        }
+        HashSet<string> exits = edges.Keys.ToHashSet();
+            Console.WriteLine("Current exits are:");
+            foreach (String exit in exits) {
+            Console.WriteLine(" - "+exit);
+        }
   }
   
   public void Goodbye () {

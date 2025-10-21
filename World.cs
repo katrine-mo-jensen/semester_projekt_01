@@ -3,9 +3,11 @@
 
 class World {
   Space entry;
+  bool hasBackpack = false;
   
   public World () {
     Space entry    = new Space("Landbrugsskolen");
+    Space classroom = new Space("Klasselokalet", "Du er nu i klasselokalet. Du kan snakke med din underviser, brug talk");
 // hovedrum mose:
     Space mose = new Space("Mosen");
 // underrum mose:
@@ -17,12 +19,15 @@ class World {
     Space mark     = new Space("Marken");
 // underrum
 
+
 //hovedrum 3 (vandløb)
     Space vandløb      = new Space("Vandløbet");
     
-    entry.AddEdge("north", mose);
-    entry.AddEdge("south", mark);
-    entry.AddEdge("east", vandløb);
+    entry.AddEdge("fortiden", mose);
+    entry.AddEdge("mark", mark);
+    entry.AddEdge("fremtiden", vandløb);
+    entry.AddEdge("klasselokalet", classroom);
+    classroom.AddEdge("tilbage", entry);
     mose.AddEdge("mosekant", mosekant);
     mosekant.AddEdge("tørvemose", tørvemose);
     udtørretEng.AddEdge("engen", udtørretEng);
