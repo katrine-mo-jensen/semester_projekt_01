@@ -4,6 +4,7 @@
 class World {
   Space entry;
   bool hasBackpack = false;
+  bool hasKey = false;
   
   public World () {
     Space entry    = new Space("Landbrugsskolen");
@@ -24,7 +25,7 @@ class World {
     Space vandløb      = new Space("Vandløbet");
     
     entry.AddEdge("fortiden", mose);
-    entry.AddEdge("mark", mark);
+    entry.AddEdge("nutiden", mark);
     entry.AddEdge("fremtiden", vandløb);
     entry.AddEdge("klasselokalet", classroom);
     classroom.AddEdge("tilbage", entry);

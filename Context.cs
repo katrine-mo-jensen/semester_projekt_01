@@ -94,12 +94,19 @@ class Player
     }
 
     //  print inventory
-    public void ShowInventory()
-    {
-        Console.WriteLine("Du har i din rygsæk:");
-        for(int i = 0; i < inventoryCount; i++)
-        {
+    public void ShowInventory(){
+     
+        if (inventory[0] == null) {
+          Console.WriteLine("Du mangler en rygsæk, snak med din underviser!"); }
+          else if (inventory[1] == null){
+            Console.WriteLine("Din rygsæk er tom!");
+          }
+          else {
+               Console.WriteLine("Du har i din rygsæk:");
+              
+          for(int i = 1; i < inventoryCount; i++){
             Console.WriteLine($"- {inventory[i]}");
         }
+          }
     }
 }

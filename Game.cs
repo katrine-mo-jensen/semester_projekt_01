@@ -15,6 +15,7 @@ class Game {
     registry.Register("go", new CommandGo());
     registry.Register("help", new CommandHelp(registry));
     registry.Register("talk", new CommandTalk());
+    registry.Register("inventory", new CommandInventory());
 
   }
   

@@ -18,7 +18,7 @@ class CommandTalk : BaseCommand, ICommand
             }
             else
             {
-                Console.WriteLine("Du har allerede en rygsæk. Underviseren smiler.");
+                Console.WriteLine("Du har allerede en rygsæk.");
             }
         }
         else
