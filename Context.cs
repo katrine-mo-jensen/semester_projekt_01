@@ -35,6 +35,20 @@ class Context {
             return;
         }
 
+      // tjek om spiller har nøgle
+    if (!player.HasItem("indsæt nøgle navn") && next.GetName() == "Marken")
+      {
+            Console.WriteLine("Nutiden er låst, du mangler en nøgle");
+            return;
+      }
+
+         // tjek om spiller har nøgle
+    if (!player.HasItem("indsæt nøgle navn2") && next.GetName() == "Vandløbet")
+      {
+            Console.WriteLine("Fremtiden er låst, du mangler en nøgle");
+            return;
+      }
+
       current.Goodbye();
       current = next;
       current.Welcome();

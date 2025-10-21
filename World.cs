@@ -4,7 +4,9 @@
 class World {
   Space entry;
   bool hasBackpack = false;
-  bool hasKey = false;
+  bool hasKey1 = false;
+  bool hasKey2 = false;
+  bool hasKey3 = false;
   
   public World () {
     Space entry    = new Space("Landbrugsskolen");
