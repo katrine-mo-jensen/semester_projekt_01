@@ -9,6 +9,8 @@ class Context {
   public Context (Space node) {
     current = node;
     player = new Player();
+    player.SetName();
+   
   }
   
   public Player GetPlayer() {
@@ -65,8 +67,9 @@ class Context {
   
 }
 
-class Player
+class Player 
 {
+    private string name;
     private string[] inventory;
     private int inventoryCount;
 
@@ -74,9 +77,30 @@ class Player
     {
         inventory = new string[maxInventorySize];
         inventoryCount = 0;
+        name = "unavngivet";
     }
 
-    // Tjek om spilleren har en genstand
+    
+    public void SetName() {
+      while (true) {
+      Console.Write("> ");
+      string? input = Console.ReadLine();   
+
+      if (!string.IsNullOrEmpty(input)){
+        this.name = input;
+        break; 
+    }
+    Console.WriteLine("Navnet kan ikke være tomt!");
+      }
+    
+
+    }
+
+    public string GetName() {
+      return this.name;
+
+    }
+// Tjek om spilleren har en genstand
     public bool HasItem(string item)
     {
         for(int i = 0; i < inventoryCount; i++)

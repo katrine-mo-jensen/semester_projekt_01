@@ -2,7 +2,7 @@ class CommandTalk : BaseCommand, ICommand
 {
     public CommandTalk()
     {
-        description = "Talk to someone in the room";
+        description = "Talk to someone in the room"; // dansk?
     }
 
     public void Execute(Context context, string command, string[] parameters)

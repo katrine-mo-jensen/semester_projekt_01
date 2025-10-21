@@ -9,10 +9,10 @@ class Game {
   
   private static void InitRegistry () {
     ICommand cmdExit = new CommandExit();
-    registry.Register("exit", cmdExit);
-    registry.Register("quit", cmdExit);
-    registry.Register("bye", cmdExit);
-    registry.Register("go", new CommandGo());
+
+    // her kan vi ændre navnene på kommandoerne - skal de være på dansk eller engelsk?
+    registry.Register("exit", cmdExit); // Bruges til at afslutte spillet før tid.
+    registry.Register("go", new CommandGo()); 
     registry.Register("help", new CommandHelp(registry));
     registry.Register("talk", new CommandTalk());
     registry.Register("inventory", new CommandInventory());
@@ -20,7 +20,12 @@ class Game {
   }
   
   static void Main (string[] args) {
-    Console.WriteLine("Welcome to the World of Zuul!");
+    
+    // Vi mangler at tage stilling til dette:
+    Console.WriteLine("Velkommen til --indsæt spilnavn her--, hvad hedder du?");
+    Player player = context.GetPlayer();
+    string spillernavn = player.GetName();
+    Console.WriteLine("Hej " + spillernavn);
     
     InitRegistry();
     context.GetCurrent().Welcome();

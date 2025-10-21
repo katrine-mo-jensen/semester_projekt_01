@@ -11,7 +11,7 @@ class Space : Node {
   
   public void Welcome () {
      if (!string.IsNullOrEmpty(welcomeMessage)){
-            Console.WriteLine(welcomeMessage);   // <--- dette viser din specielle besked
+            Console.WriteLine(welcomeMessage);   // Tilpasset welcomeMessage
             
         }
         else
